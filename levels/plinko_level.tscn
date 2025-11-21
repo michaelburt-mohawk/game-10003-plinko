@@ -19,7 +19,7 @@ size = Vector2(20, 140)
 
 [node name="Pegs" type="Node2D" parent="."]
 
-[node name="Row" parent="Pegs" instance=ExtResource("1_ahvb8")]
+[node name="Row1" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 256)
 
 [node name="Row2" parent="Pegs" instance=ExtResource("1_ahvb8")]
@@ -42,24 +42,24 @@ position = Vector2(55, 640)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="VerticalWall" type="Node2D" parent="Walls"]
+[node name="VerticalWall1" type="Node2D" parent="Walls"]
 position = Vector2(0, 256)
 
-[node name="WallPiece" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+[node name="WallPiece" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="WallPiece2" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+[node name="WallPiece2" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 128)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="WallPiece3" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+[node name="WallPiece3" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 256)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="WallPiece4" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+[node name="WallPiece4" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 384)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
