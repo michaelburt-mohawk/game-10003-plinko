@@ -11,9 +11,26 @@ config_version=5
 [application]
 
 config/name="game-10003-plinko"
+run/main_scene="uid://cyy8uc4m1fvy6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=625
+window/size/viewport_height=850
 
 [dotnet]
 
 project/assembly_name="game-10003-plinko"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/2d_shapes/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://levels/": "yellow",
+"res://prefabs/": "green"
+}

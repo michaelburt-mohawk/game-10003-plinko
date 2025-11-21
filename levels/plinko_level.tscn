@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyy8uc4m1fvy6"]
+
+[ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
+[ext_resource type="PackedScene" uid="uid://skwohdfq4xw0" path="res://prefabs/wall_piece/wall_piece.tscn" id="2_ndf8e"]
+[ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_hhynp"]
+[ext_resource type="PackedScene" uid="uid://cdygi6j0dadwx" path="res://prefabs/player/player.tscn" id="4_20e0n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20e0n"]
+bounce = 0.36
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndf8e"]
+size = Vector2(650, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhynp"]
+size = Vector2(20, 140)
+
+[node name="PlinkoLevel" type="Node2D"]
+
+[node name="Pegs" type="Node2D" parent="."]
+
+[node name="Row" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 256)
+
+[node name="Row2" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 320)
+
+[node name="Row3" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 384)
+
+[node name="Row4" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 448)
+
+[node name="Row5" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 512)
+
+[node name="Row6" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 576)
+
+[node name="Row7" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 640)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="VerticalWall" type="Node2D" parent="Walls"]
+position = Vector2(0, 256)
+
+[node name="WallPiece" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="VerticalWall2" type="Node2D" parent="Walls"]
+position = Vector2(624, 256)
+
+[node name="WallPiece" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="BottomRegion" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(314, 840)
+physics_material_override = SubResource("PhysicsMaterial_20e0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Floor"]
+shape = SubResource("RectangleShape2D_ndf8e")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Floor"]
+script = ExtResource("3_hhynp")
+size = Vector2(650, 20)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Wall1" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(0, 768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Wall1"]
+shape = SubResource("RectangleShape2D_hhynp")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Wall1"]
+script = ExtResource("3_hhynp")
+size = Vector2(20, 140)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Wall2" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(627, 768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Wall2"]
+shape = SubResource("RectangleShape2D_hhynp")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Wall2"]
+script = ExtResource("3_hhynp")
+size = Vector2(20, 140)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Player" parent="." instance=ExtResource("4_20e0n")]
+position = Vector2(344, 168)
