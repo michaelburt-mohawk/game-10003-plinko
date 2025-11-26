@@ -35,6 +35,10 @@ folder_colors={
 "res://prefabs/": "green"
 }
 
+[global_group]
+
+player=""
+
 [input]
 
 drop_disk={

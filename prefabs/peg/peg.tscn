@@ -10,6 +10,9 @@ radius = 5.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ndf8e")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(3, 0, 1, -6, -3, 0, 0, 1)
+
 [node name="Ellipse" type="Node2D" parent="."]
 script = ExtResource("1_oc00n")
 size = Vector2(10, 10)
