@@ -3,6 +3,11 @@ using System;
 
 public partial class Player : RigidBody2D
 {
+	[Export]
+	public Camera2D GameCamera;
+	
+	public bool Dead = false;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -30,5 +35,16 @@ public partial class Player : RigidBody2D
 				Freeze = false;
 			}
 		}
+
+		// snap camera Y position to my Y position ONLY if I'm not dead
+		if (!Dead)
+        {
+            Vector2 newCamPosition = GameCamera.Position;
+
+            // set the cam's y position to be equal to this player's y position
+            newCamPosition.Y = Position.Y;
+
+            GameCamera.Position = newCamPosition;
+        }
 	}
 }

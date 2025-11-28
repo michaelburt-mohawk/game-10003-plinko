@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://byfflpg32m2op"]
+[gd_scene load_steps=7 format=3 uid="uid://byfflpg32m2op"]
 
 [ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_t4nab"]
 [ext_resource type="Script" uid="uid://dufx5tjqmxxj2" path="res://prefabs/bucket/Bucket.cs" id="1_yr506"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20e0n"]
 size = Vector2(70, 100)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yr506"]
+bounce = 0.67
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr506"]
 size = Vector2(30, 112)
@@ -20,6 +24,7 @@ shape = SubResource("RectangleShape2D_20e0n")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(50, 0)
+physics_material_override = SubResource("PhysicsMaterial_yr506")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_yr506")

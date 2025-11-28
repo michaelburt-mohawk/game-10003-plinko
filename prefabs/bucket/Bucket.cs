@@ -8,9 +8,6 @@ public partial class Bucket : Area2D
 	public int BucketScore = 0;
 
 	[Export]
-	public Player PlayerNode;
-
-	[Export]
 	public PlinkoLevel PlinkoLevelNode;
 
 
@@ -32,7 +29,10 @@ public partial class Bucket : Area2D
 		// we ONLY want to increase the score when a player disk falls in the bucket
 		if (body.IsInGroup("player"))
         {
-            PlinkoLevelNode.Score += BucketScore;
+			PlinkoLevelNode.IncreaseScore(BucketScore);
+
+			Player playerDisk = (Player)body;
+			playerDisk.Dead = true;
         }
     }
 
